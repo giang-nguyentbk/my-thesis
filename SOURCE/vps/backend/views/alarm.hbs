@@ -1,0 +1,112 @@
+<script>
+
+        
+            $(document).ready(function(){
+                 
+            })
+
+</script>
+<div class="row">
+    <div class="col-sm-2">
+        <div class="card">
+            
+            <h5 class="card-header">OutStion Types</h5>
+            <div class="list-group">
+                {{#each lcTypes}}
+                <a href="./{{id}}" class="list-group-item mt-3 list-group-item-action {{#if isActive}}active{{/if}}">
+                    {{name}}
+                </a>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-10">
+
+
+        <div class="card">
+        <div class="card-body">
+            <span>Report alarms in Excel</span>
+
+        <div class="dropdown show float-right">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Choose OS_Type
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="OS_Type">
+            <a class="dropdown-item" id="0" href="/report/0">Khi thai</a>
+            <a class="dropdown-item" id="1" href="/report/1">Khong khi</a>
+            <a class="dropdown-item" id="2" href="/report/2">Nuoc mat</a>
+            <a class="dropdown-item" id="3" href="/report/3">Nuoc ngam</a>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="card">
+        <h4 class="card-header" style="text-align: center">Alarms</h4>
+{{#if lcIsAuthenticated}}
+    <div id="user" style="display: none;">{{lcUser.username}}</div>
+{{#if lcUser.admin}}
+    {{#if this.empty}}
+        <div class="card-body">
+            <p class="card-text">Khong co alarm</p>
+        </div>
+    {{else}}
+        <div class="card-body">
+            <div class="row">
+                {{#each this.alarms}}
+                <div class="col-sm-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h6 class="card-title">Location: {{OS_Location}} <br> Indicator: {{indicator}}</h6>
+                        {{#switch severity}}
+                            {{#case 1}}
+                                <p class="card-text text-warning text-center h5">
+                                <i class="fa-solid fa-circle-exclamation"></i>   {{content}}</p> 
+                            {{/case}}
+                            {{#case 2}}
+                            <p class="card-text text-danger text-center h5">
+                                <i class="fa-solid fa-triangle-exclamation"></i>  {{content}}</p>            
+                            {{/case}}
+                        {{/switch}}
+                 
+                        </div>
+                        <div id="id" style="display: none;">{{_id}}</div>
+                        <div class="card-footer">
+                            <a name="btn" id="{{_id}}" class="btn btn-outline-success" href="#" role="button" >
+                                <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                                ACK
+                                </a>
+                        </div>
+                    </div>
+                    
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+    {{/if}}
+    {{else}}
+        <div class="card-body">
+            <div class="row">
+                {{#each this.alarms}}
+                <div class="col-sm-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Location: {{OS_Location}}  <br>   Indicator: {{indicator}}</h6>
+                            <p class="card-text text-danger">{{content}}</p>
+                        </div>
+
+                    </div>
+                    
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+{{/if}}
+{{/if}}
+
+</div>
+    </div>
+</div>

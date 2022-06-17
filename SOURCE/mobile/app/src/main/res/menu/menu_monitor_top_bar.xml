@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_monitor"
+        android:title="@string/top_monitor"
+        android:icon="@drawable/ic_location"/>
+
+    <item android:id="@+id/menu_trend"
+        android:title="@string/top_control"
+        android:icon="@drawable/ic_control"/>
+
+</menu>

@@ -1,0 +1,84 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io()
+        let  clientid, infor
+        
+        socket.on('vps-send-clientID',(id)=>{
+            clientid = id.clientID 
+            socket.emit('client-send-OS_index', clientid, 0)
+        })
+
+        socket.on('vps-send-data', (data)=>{
+            if (data.data[0].value){
+            $("h2").html("Connected")
+            $("h4").html("Connected")
+            $("h6").html("Connected")
+            }
+            for(i=0;i<11;i++){
+            if (data.data[i].severity){
+                $("h1").html("Warning!!!")
+                $("h3").html("Warning!!!")
+                $("h5").html("Warning!!!")
+            }
+               
+            }
+        })
+
+    $(document).ready(function(){
+    });
+
+</script>
+<style>
+    h2,h4,h6{font-size: small; color: green; text-align: center;}
+    h1,h3,h5{font-size: small;color: rgb(255, 174, 0);text-align: center;}
+</style>
+<span id="stt1"></span>
+<div id="googleMap" style="width: 100%;;height: 750px;;"></div>
+<script>
+    
+        function myMap() {
+        var hcmut = {lat: 10.772895, lng: 106.659809}
+        var bienhoa = {lat: 10.956918, lng: 106.865269}
+        var mytho = {lat: 10.367031, lng: 106.368213}
+
+        var map = new google.maps.Map(document.getElementById("googleMap"),{
+            center: hcmut,
+            zoom:10,
+        })
+        const marker = new google.maps.Marker({
+            position: hcmut,
+            map: map,
+        })
+        const marker2 = new google.maps.Marker({
+            position: bienhoa,
+            map: map,
+        })
+        const marker3 = new google.maps.Marker({
+            position: mytho,
+            map: map,
+        })
+        const infoWindow = new google.maps.InfoWindow({
+            content: "<b>Bach Khoa Station:</b> <br> Status: <h2></h2> Warning: <h1></h1>",
+            disableAutoPan: true,
+        });
+        const infoWindow2 = new google.maps.InfoWindow({
+            content: "<b>Bien Hoa Station:</b> <br> Status: <h4></h4> Warning: <h3></h3>",
+            disableAutoPan: true,
+        });
+        const infoWindow3 = new google.maps.InfoWindow({
+            content: "<b>My Tho Station:</b> <br> Status: <h6></h6> Warning: <h5></h5>",
+            disableAutoPan: true,
+        });
+
+        marker.addListener("click", () => {
+          infoWindow.open(map, marker);
+        });
+        marker2.addListener("click", ()=>{
+            infoWindow2.open(map, marker2);
+        })
+        marker3.addListener("click", ()=>{
+            infoWindow3.open(map, marker3);
+        })
+    }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzvltrCjv8ibLJoTqfRtTH78thyf8hLyw&callback=myMap" type="text/javascript"></script>

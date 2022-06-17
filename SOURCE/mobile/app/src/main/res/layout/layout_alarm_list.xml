@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_alarm_list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/corner_notify">
+
+        <ImageView
+            android:id="@+id/img_alarm_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:maxWidth="45dp"
+            android:maxHeight="45dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_alert" />
+
+        <TextView
+            android:id="@+id/tv_alarm_datetime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toEndOf="@id/img_alarm_icon"
+            android:text="dd/MM/yyyy hh:mm:ss aa"
+            android:textColor="@color/white_700"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_alarm_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_alarm_datetime"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@+id/img_alarm_icon"
+            android:text="Pressure exceeded HIGH limit!!!"
+            android:textColor="@color/teal_200"
+            android:textSize="18sp" />
+
+</RelativeLayout>

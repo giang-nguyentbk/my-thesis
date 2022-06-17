@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">myapp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bottom_monitor">Monitor</string>
+    <string name="bottom_control">Control</string>
+    <string name="bottom_trend">Trend</string>
+    <string name="bottom_alarm">Alarm</string>
+    <string name="top_monitor">Monitor</string>
+    <string name="top_control">Control</string>
+</resources>
