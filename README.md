@@ -8,13 +8,13 @@ The project's tasks are:
 
 The project's components are:
   1. Raspberry Pi gateway: 
-     - Modbus Client: play a role as Modbus driver to connect and exchange data with Modbus server at monitoring oustations.
+     - Modbus Client: play a role as Modbus driver to connect and exchange data with Modbus server at monitoring outstations.
      - OPC UA Server: a terminal for a bridge between a gateway and a VPS.
      - Wireguard Client: turn gateways and VPS into a local network which is private and secure.
      - Modbus Server: simulate Modbus servers at monitoring outstations.
   2. Azure VPS:
      - OPC UA Client: play a role as OPC UA driver to connect and exchange data with OPC UA server at gateways.
-     - Backend Server NodeJS: used to create Socket.IO topics to exchange data between Android/Web apps and VPS. Also, logging data to MongoDB database.
+     - Backend Server NodeJS: used to create Socket.IO topics to exchange data between Android/Web apps and VPS. Also, it log data to MongoDB database.
        - (Because of time constraint, building a Web app is tend to server-side-rendering instead of an independent frontend).
      - Wireguard Server.
      - OPC UA Server: simulate OPC UA servers at gateways.
