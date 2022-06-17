@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_monitor"
+        android:title="@string/bottom_monitor"
+        android:icon="@drawable/ic_location"/>
+
+    <item android:id="@+id/menu_control"
+        android:title="@string/bottom_control"
+        android:icon="@drawable/ic_control"/>
+
+    <item android:id="@+id/menu_trend"
+        android:title="@string/bottom_trend"
+        android:icon="@drawable/ic_trend"/>
+
+    <item android:id="@+id/menu_alarm"
+        android:title="@string/bottom_alarm"
+        android:icon="@drawable/ic_warning"/>
+</menu>

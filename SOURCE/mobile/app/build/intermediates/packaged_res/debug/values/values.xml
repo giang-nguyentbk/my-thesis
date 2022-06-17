@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="black">#FF000000</color>
+    <color name="blue_500">#5B7DF3</color>
+    <color name="blue_trans_500">#335B7DF3</color>
+    <color name="dark_200">#3C3F41</color>
+    <color name="dark_500">#313335</color>
+    <color name="dark_700">#2B2B2B</color>
+    <color name="darkblue_200">#0226EF</color>
+    <color name="darkblue_500">#182779</color>
+    <color name="darkblue_700">#001126</color>
+    <color name="green">#059862</color>
+    <color name="light_blue">#C7EBFB</color>
+    <color name="light_purple">#EF5086</color>
+    <color name="lime">#00FF00</color>
+    <color name="limegreen">#32cd32</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="red_200">#FF6471</color>
+    <color name="red_500">#FA2234</color>
+    <color name="red_700">#E81022</color>
+    <color name="redfade_500">#F34655</color>
+    <color name="redfade_trans_500">#33F34655</color>
+    <color name="teal_200">#07FFE7</color>
+    <color name="teal_500">#07CDBA</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="tealfade60_200">#9907FFE7</color>
+    <color name="white">#ECEBEB</color>
+    <color name="white_200">#636363</color>
+    <color name="white_500">#B3BEBEBE</color>
+    <color name="white_700">#D1D0D0</color>
+    <color name="whitefade_200">#40ECEBEB</color>
+    <color name="whitefade_500">#00ECEBEB</color>
+    <string name="app_name">myapp</string>
+    <string name="bottom_alarm">Alarm</string>
+    <string name="bottom_control">Control</string>
+    <string name="bottom_monitor">Monitor</string>
+    <string name="bottom_trend">Trend</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="top_control">Control</string>
+    <string name="top_monitor">Monitor</string>
+    <style name="Theme.Myapp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
+        
+    </style>
+</resources>

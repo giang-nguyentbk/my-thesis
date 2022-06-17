@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailAlarmActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_detail_alarm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:title="ALARM" />
+    <LinearLayout
+        android:layout_below="@+id/tb_detail_alarm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@drawable/corner_botnavi">
+
+        <!-- Message Alarm -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_da_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_da_content_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:maxWidth="220dp"
+                android:text="Temperature is out of HIGH limit"
+                android:textAlignment="textStart"
+                android:textColor="@color/teal_200"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <!-- Severity -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_da_severity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Severity"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"/>
+
+            <ImageView
+                android:id="@+id/ic_da_severity_v"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="75dp"
+                android:src="@drawable/ic_alert" />
+        </RelativeLayout>
+
+        <!-- Indicator -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_da_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temperature"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_da_indicator_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="75dp"
+                android:text="00.00"
+                android:textAlignment="gravity"
+                android:textColor="@color/teal_200"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_da_indicator_u"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:text="°C"
+                android:textAlignment="gravity"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <!-- LOWLOW -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_da_LOWLOW"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LOWLOW"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_da_LOWLOW_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="60.00"
+                android:textSize="18sp"
+                android:textColor="@color/teal_200"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="75dp"
+                android:textAlignment="gravity"/>
+
+            <TextView
+                android:id="@+id/tv_da_LOWLOW_u"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:text="°C"
+                android:textAlignment="gravity"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <!-- LOW -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_da_LOW"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LOW"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_da_LOW_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="80.00"
+                android:textSize="18sp"
+                android:textColor="@color/teal_200"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="75dp"
+                android:textAlignment="gravity"/>
+
+            <TextView
+                android:id="@+id/tv_da_LOW_u"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:text="°C"
+                android:textAlignment="gravity"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <!-- HIGH -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_da_HIGH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HIGH"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_da_HIGH_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100.00"
+                android:textSize="18sp"
+                android:textColor="@color/teal_200"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="75dp"
+                android:textAlignment="gravity"/>
+
+            <TextView
+                android:id="@+id/tv_da_HIGH_u"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:text="°C"
+                android:textAlignment="gravity"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <!-- HIGHHIGH -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_da_HIGHIGH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HIGHHIGH"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_da_HIGHHIGH_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="120.00"
+                android:textSize="18sp"
+                android:textColor="@color/teal_200"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="75dp"
+                android:textAlignment="gravity"/>
+
+            <TextView
+                android:id="@+id/tv_da_HIGHHIGH_u"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:text="°C"
+                android:textAlignment="gravity"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <!-- DEADBAND -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_da_DEADBAND"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DEADBAND"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_da_DEADBAND_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5.00"
+                android:textSize="18sp"
+                android:textColor="@color/teal_200"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="75dp"
+                android:textAlignment="gravity"/>
+
+            <TextView
+                android:id="@+id/tv_da_DEADBAND_u"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:text="°C"
+                android:textAlignment="gravity"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <!-- StartTime -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_da_starttime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Time"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_da_starttime_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01:59:39 PM\n12/5/2022"
+                android:textSize="18sp"
+                android:textColor="@color/teal_200"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="75dp"
+                android:textAlignment="textEnd"/>
+        </RelativeLayout>
+
+        <!-- Duration -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_da_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Duration"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_da_duration_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:10:05"
+                android:textSize="18sp"
+                android:textColor="@color/teal_200"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="75dp"
+                android:textAlignment="gravity"/>
+        </RelativeLayout>
+
+        <!-- ACK -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_da_ack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ACK"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"/>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/sw_da_ack_v"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="80dp" />
+        </RelativeLayout>
+
+        <!-- ACKUser -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_da_ACKUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ACK User"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_da_ACKUser_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="75dp"
+                android:text="Nguyen Van An"
+                android:textAlignment="gravity"
+                android:textColor="@color/teal_200"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <!-- ACKTime -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_da_acktime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ACK Time"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_da_acktime_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01:59:39 PM\n12/5/2022"
+                android:textSize="18sp"
+                android:textColor="@color/teal_200"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="75dp"
+                android:textAlignment="textEnd"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>
