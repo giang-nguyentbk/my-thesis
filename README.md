@@ -28,3 +28,4 @@ The project's components are:
      - Features similar Android app.
      - Oustation list on Map.
      - Download Excel reports.
+     - Register.
