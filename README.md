@@ -3,7 +3,7 @@ The thesis name is "*BUILDING A REMOTE MONITORING AND CONTROL SOLUTION INTEGRATI
 
 The project's tasks are:
   1. Acquiring data from Raspberry Pi gateways which will exchange data with Modbus/DNP3 server at monitoring outstations.
-  2. Sending total data using OPCUA protocol and Wireguard VPN from distributed gateways to a Azure VPS.
+  2. Sending all data using OPCUA protocol and Wireguard VPN from distributed gateways to a Azure VPS.
   3. Exchange data with an Android and Web application using Socket.IO.
 
 The project's components are:
@@ -14,7 +14,7 @@ The project's components are:
      - Modbus Server: simulate Modbus servers at monitoring outstations.
   2. Azure VPS:
      - OPC UA Client: play a role as OPC UA driver to connect and exchange data with OPC UA server at gateways.
-     - Backend Server NodeJS: used to create Socket.IO topics to exchange data between Android/Web apps and VPS. Also, it log data to MongoDB database.
+     - Backend Server NodeJS: used to create Socket.IO topics to exchange data between Android/Web apps and VPS. Also, it records data to MongoDB database.
        - (Because of time constraint, building a Web app is tend to server-side-rendering instead of an independent frontend).
      - Wireguard Server.
      - OPC UA Server: simulate OPC UA servers at gateways.
